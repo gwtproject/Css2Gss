@@ -1,0 +1,54 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+    <ui:style>
+        section {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .columns {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        section textarea {
+            height: 450px;
+            width: 48%;
+            margin-top: 20px;
+
+        }
+
+        .logContainer {
+            height: 250px;
+            width: 100%;
+            overflow: auto;
+        }
+
+        .button {
+            width: 120px;
+        }
+    </ui:style>
+
+    <g:HTMLPanel tag="section">
+        <h1>CSS 2 GSS converter</h1>
+        <p>
+            Paste your css into the left textarea and press the convert button. The result of the
+            conversion will be displayed in the right textarea.
+        </p>
+
+        <g:Button ui:field="convert" styleName="{style.button}">Convert</g:Button>
+
+        <div class="{style.columns}">
+            <textarea ui:field="cssContent" placeholder="Paste your CSS file here"
+                      wrap="off"></textarea>
+
+            <textarea ui:field="resultContent" wrap="off" placeholder="Result"></textarea>
+        </div>
+
+
+        <h2>Server logs</h2>
+        <div ui:field="logContainer" class="{style.logContainer}"></div>
+    </g:HTMLPanel>
+</ui:UiBinder>
