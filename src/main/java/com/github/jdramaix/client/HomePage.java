@@ -32,6 +32,7 @@ import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 
 import com.github.jdramaix.client.fileapi.Blob;
+import com.github.jdramaix.client.fileapi.Callback;
 import com.github.jdramaix.client.fileapi.FormData;
 import com.github.jdramaix.client.fileapi.XMLHttpRequest;
 
@@ -76,7 +77,12 @@ public class HomePage implements IsWidget {
 
     xhr.open("POST", uploadUrl);
 
-    xhr.setOnreadystatechange(() -> onreadystatechange(xhr));
+    xhr.setOnreadystatechange(new Callback() {
+      @Override
+      public void apply() {
+        onreadystatechange(xhr);
+      }
+    });
 
     xhr.send(formData);
   }
