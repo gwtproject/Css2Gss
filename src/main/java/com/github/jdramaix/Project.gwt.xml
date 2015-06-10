@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module rename-to='project'>
+    <!-- Inherit the core Web Toolkit stuff. -->
+    <inherits name='com.google.gwt.user.User'/>
+
+    <!-- Default css -->
+    <inherits name='com.google.gwt.user.theme.standard.Standard'/>
+    <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+    <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/> -->
+
+    <!-- Other module inherits -->
+    <inherits name="com.google.gwt.query.Query"/>
+
+    <source path='client'/>
+
+    <entry-point class="com.github.jdramaix.client.ConverterApp"/>
+
+    <set-configuration-property name="CssResource.enableGss" value="true"/>
+    <set-configuration-property name="CssResource.gssDefaultInUiBinder" value="true"/>
+</module>
