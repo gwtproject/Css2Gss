@@ -10,19 +10,23 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
-    <listener>
-        <listener-class>com.github.jdramaix.server.guice.GuiceServletConfig</listener-class>
-    </listener>
+    <servlet>
+        <servlet-name>convertServlet</servlet-name>
+        <servlet-class>com.github.jdramaix.server.servlet.ConverterServlet</servlet-class>
+    </servlet>
 
-    <filter>
-        <filter-name>guiceFilter</filter-name>
-        <filter-class>com.google.inject.servlet.GuiceFilter</filter-class>
-    </filter>
+    <servlet-mapping>
+        <servlet-name>convertServlet</servlet-name>
+        <url-pattern>/convert</url-pattern>
+    </servlet-mapping>
 
-    <filter-mapping>
-        <filter-name>guiceFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-        <dispatcher>REQUEST</dispatcher>
-        <dispatcher>FORWARD</dispatcher>
-    </filter-mapping>
+    <servlet>
+        <servlet-name>fileServlet</servlet-name>
+        <servlet-class>com.github.jdramaix.server.servlet.FileServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>fileServlet</servlet-name>
+        <url-pattern>/file</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -4,13 +4,11 @@ import com.google.appengine.api.blobstore.BlobKey;
 import com.google.appengine.api.blobstore.BlobstoreService;
 import com.google.appengine.api.blobstore.BlobstoreServiceFactory;
 
-import javax.inject.Singleton;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@Singleton
 public class FileServlet extends HttpServlet {
   static final String BLOB_KEY = "blob-key";
   private final BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();

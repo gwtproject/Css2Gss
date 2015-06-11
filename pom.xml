@@ -19,8 +19,6 @@
 
         <!-- server -->
         <gae.version>1.9.21</gae.version>
-        <guice.version>3.0</guice.version>
-        <servlet-api.version>2.5</servlet-api.version>
 
         <!-- maven -->
         <gwt-maven-plugin.version>2.5.1</gwt-maven-plugin.version>
@@ -69,12 +67,9 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
-                <version>2.7.0</version>
+                <version>${gwt.version}</version>
                 <configuration>
                     <strict>true</strict>
-                    <testTimeOut>180</testTimeOut>
-                    <includes>**/*GwtTest.java</includes>
-                    <mode>htmlunit</mode>
 
                     <extraJvmArgs>-Xss1024K -Xmx1024M -XX:MaxPermSize=256M</extraJvmArgs>
                     <logLevel>INFO</logLevel>
@@ -83,7 +78,7 @@
                     <copyWebapp>true</copyWebapp>
                     <hostedWebapp>${webappDirectory}</hostedWebapp>
 
-                    <runTarget>Project.html</runTarget>
+                    <runTarget>index.jsp</runTarget>
 
                     <jsInteropMode>JS</jsInteropMode>
                     <modules>
@@ -129,18 +124,7 @@
             <groupId>com.googlecode.gwtquery</groupId>
             <artifactId>gwtquery</artifactId>
             <version>${gwtquery.version}</version>
-        </dependency>
-
-        <!-- DI -->
-        <dependency>
-            <groupId>com.google.inject</groupId>
-            <artifactId>guice</artifactId>
-            <version>${guice.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.inject.extensions</groupId>
-            <artifactId>guice-servlet</artifactId>
-            <version>${guice.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Google App Engine -->
@@ -161,12 +145,6 @@
         </dependency>
 
         <!-- Other -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>${servlet-api.version}</version>
-            <scope>runtime</scope>
-        </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
