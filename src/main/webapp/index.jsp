@@ -5,6 +5,8 @@
 <head>
     <meta charset=UTF-8>
     <title>Css2Gss</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
+
     <script src="css2gss/css2gss.nocache.js"></script>
 </head>
 <body>
