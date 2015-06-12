@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<module rename-to='css2gss'>
+    <!-- Inherit the core Web Toolkit stuff. -->
+    <inherits name='com.google.gwt.user.User'/>
+
+    <!-- Default css -->
+    <inherits name='com.google.gwt.user.theme.standard.Standard'/>
+    <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+    <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/> -->
+
+    <!-- Other module inherits -->
+    <inherits name="com.google.gwt.query.Query"/>
+
+    <source path='client'/>
+
+    <entry-point class="com.github.jdramaix.client.ConverterApp"/>
+</module>
