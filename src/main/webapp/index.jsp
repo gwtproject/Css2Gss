@@ -8,6 +8,30 @@
     <link rel="shortcut icon" type="image/png" href="/favicon.png">
 
     <script src="css2gss/css2gss.nocache.js"></script>
+
+    <style>
+        section {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        }
+
+        .columns {
+        display: flex;
+        justify-content: space-between;
+        }
+
+        section textarea {
+        height: 450px;
+        width: 48%;
+        margin-top: 20px;
+
+        }
+
+        #convert {
+        width: 120px;
+        }
+    </style>
 </head>
 <body>
 <noscript>
@@ -17,6 +41,25 @@
         in order for this application to display correctly.
     </div>
 </noscript>
+
+
+
+<section>
+    <h1>CSS 2 GSS converter</h1>
+    <p>
+        Paste your css into the left textarea and press the convert button. The result of the
+        conversion will be displayed in the right textarea.
+    </p>
+
+    <button id="convert">Convert</button>
+
+    <div class="columns">
+        <textarea id="cssContent" placeholder="Paste your CSS file here"
+                  wrap="off"></textarea>
+
+        <textarea id="resultContent" wrap="off" placeholder="Result"></textarea>
+    </div>
+</section>
 
 <script>
     <% BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService(); %>
